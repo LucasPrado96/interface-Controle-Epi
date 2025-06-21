@@ -8,4 +8,5 @@ contrasteAmarelo: '#ffc107',
 backgroundYellow: '#9c7605',  
 hoverYellow: '#f5d471',  
 black: '#000000',
+
 }

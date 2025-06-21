@@ -1,8 +1,5 @@
 import Styled from "styled-components";
 import {colorsTheme} from '../../constants/index'
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import DeleteIcon from '@mui/icons-material/Delete';
-
 
 export const Container = Styled.div`
 width: 100%;
@@ -35,17 +32,24 @@ h1{
 
 `;
 
-export const DivTable = Styled.div`
+export const Form = Styled.form`
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: center; 
- width: 100%;
+ width: 80%;
  background-color: ${colorsTheme.offwhite};
  border-radius: 15px;
  padding: 25px;
  margin-top: 20px;
  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+   p{
+    font-size: 11px;
+    color: red;
+    margin-top: 5px;
+    height: 10px;
+ }
  `;
 export const InputContainer = Styled.div`
  display: flex;
@@ -72,29 +76,27 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
  `;
 
 export const Button = Styled.button`
-width: 15%;
-height: 30px;
-border-radius: 5px;
+width: 100%;
+height: 45px;
+border-radius: 10px;
 outline: none;
 border: none;
 font-weight: 800;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 5px;
-font-size: 15px;
+font-size: 18px;
 margin-top: 25px;
 background-color: ${colorsTheme.contrasteAmarelo};
 cursor: pointer;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 &:hover{
-    background-color: ${colorsTheme.backgroundYellow};
+    border: 1px solid black;
 }
 
 &:active{
     opacity: 0.6;
 }
+
+
 `;
 
 export const Label = Styled.label`
@@ -102,16 +104,4 @@ font-size: 13px;
 font-weight: 800;
 opacity: 0.6;
 
-`
-
-export const StyledPaperIcon = Styled(ReceiptLongIcon)`
-
-color: ${colorsTheme.backgroundYellow};
-cursor: pointer;
-`
-
-export const StyledDeleteIcon = Styled(DeleteIcon)`
-
-color: red;
-cursor: pointer;
 `

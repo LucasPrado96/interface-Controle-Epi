@@ -8,7 +8,8 @@ const paths = {
     AddStock: '/epi/add-estoque',
     DeliveryEpi: '/entrega',
     GetHistory: '/ficha',
-    ListEmployeeHistory: '/ficha-funcionario'
+    ListEmployeeHistory: '/ficha-funcionario',
+    EditEpi: '/editar-epi'
     
   
 

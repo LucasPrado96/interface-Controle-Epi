@@ -15,12 +15,13 @@ export function Home() {
 
   return (
     <Container>
-      
+  
         <Header path={location.pathname}/>
 
         <ContentManual>
          <Outlet/>
         </ContentManual>
+       
     </Container>
   );
 }

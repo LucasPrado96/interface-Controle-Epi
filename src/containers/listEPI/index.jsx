@@ -1,4 +1,4 @@
-import { Container, DivTable, StyledAddIcon, StyledDeleteIcon } from "./styles";
+import { Container, DivTable, StyledAddIcon, StyledDeleteIcon, } from "./styles";
 
 
 import {api} from '../../services/api'
@@ -11,12 +11,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import paths from "../../constants/paths";
+
 
 
 
 
 export default function ListEpi() {
 const  [epi, setEpi] = useState([])
+const navigate = useNavigate()
 
 
 useEffect(() => {
@@ -28,6 +32,14 @@ useEffect(() => {
   getEmployee()
  
 },[])
+
+function AddStock(id){
+navigate(paths.AddStock, {state: {id}})
+}
+
+// function EditEpi(id){
+// navigate(paths.EditEpi, {state: {id}})
+// }
   
 
 async function DeleteEpi(id){
@@ -38,7 +50,7 @@ async function DeleteEpi(id){
 
   try{
     await api.delete(`/epi/${id}`)
-    alert('Colaborador deletado com sucesso')
+    alert('Epi deletado com sucesso')
     setEpi(prevsepi => prevsepi.filter(epi => epi.id !== id))
   } catch(err){
        console.error('erro', err)
@@ -58,11 +70,12 @@ async function DeleteEpi(id){
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Nome</TableCell>
+            <TableCell>Descrição do Epi</TableCell>
             <TableCell >ID</TableCell>
             <TableCell  align="center">Quantidade</TableCell>
             <TableCell  align="center">C.A</TableCell>
             <TableCell align="center">Adicionar Saldo</TableCell>
+            {/* <TableCell align="center">Editar Epi</TableCell> */}
             <TableCell ></TableCell>
             
          
@@ -80,8 +93,9 @@ async function DeleteEpi(id){
               <TableCell >{epi.id}</TableCell>
               <TableCell  align="center">{epi.quantity}</TableCell>
               <TableCell  align="center">{epi.ca}</TableCell>
-              <TableCell align="center">{<StyledAddIcon/>}</TableCell>
-              <TableCell align="center">{<StyledDeleteIcon onClick={() => {DeleteEpi(epi.id)}}/>}</TableCell>
+              <TableCell  align="center">{<StyledAddIcon onClick={() => {AddStock(epi)}}/>}</TableCell>
+              {/* <TableCell  align="center">{<StyledEditIcon onClick={() => {EditEpi(epi)}}/>}</TableCell> */}
+              <TableCell  align="center">{<StyledDeleteIcon onClick={() => {DeleteEpi(epi.id)}}/>}</TableCell>
               
            
             </TableRow>

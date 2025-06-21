@@ -71,27 +71,27 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
  `;
 
-// export const Button = Styled.button`
-// width: 60%;
-// height: 30px;
-// border-radius: 5px;
-// outline: none;
-// border: none;
-// font-weight: 800;
-// font-size: 9px;
-// margin-top: 25px;
-// background-color: ${colorsTheme.contrasteAmarelo};
-// cursor: pointer;
-// box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+export const Button = Styled.button`
+width: 60%;
+height: 30px;
+border-radius: 5px;
+outline: none;
+border: none;
+font-weight: 800;
+font-size: 9px;
+margin-top: 25px;
+background-color: ${colorsTheme.contrasteAmarelo};
+cursor: pointer;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-// &:hover{
-//     background-color: ${colorsTheme.backgroundYellow};
-// }
+&:hover{
+    background-color: ${colorsTheme.backgroundYellow};
+}
 
-// &:active{
-//     opacity: 0.6;
-// }
-// `;
+&:active{
+    opacity: 0.6;
+}
+`;
 
 export const Label = Styled.label`
 font-size: 13px;

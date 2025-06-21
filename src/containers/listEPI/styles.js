@@ -2,6 +2,7 @@ import Styled from "styled-components";
 import {colorsTheme} from '../../constants/index'
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 export const Container = Styled.div`
@@ -103,6 +104,12 @@ opacity: 0.6;
 export const StyledAddIcon = Styled(AddIcon)`
 
 color: ${colorsTheme.backgroundYellow};
+cursor: pointer;
+`
+
+export const StyledEditIcon = Styled(EditIcon)`
+
+color: ${colorsTheme.black};
 cursor: pointer;
 `
 

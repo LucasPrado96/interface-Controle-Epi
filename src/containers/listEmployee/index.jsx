@@ -36,6 +36,7 @@ useEffect(() => {
 async function SelectEmployee(id){
   const {data} = await api.get(`/ficha/${id}`)
   navigate(paths.ListEmployeeHistory, {state: {data}})
+  console.log(data)
  
 }
 
@@ -59,7 +60,7 @@ async function DeleteEmployee(id){
   return (
     <Container>
       <h1>LISTA DOS FUNCIONARIOS</h1>
-
+ 
 
       
 

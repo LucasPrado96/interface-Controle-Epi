@@ -24,8 +24,9 @@ export default function DeliveryEPi() {
       const options = data.map((epiOption) => ({
         value: epiOption.id,
         label: epiOption.name,
+      
       }));
-
+   
       setEpiOptions(options);
     }
     FetchEpis();
@@ -48,29 +49,37 @@ export default function DeliveryEPi() {
   useEffect(() => {
     if (selectedEpi) {
       setValue("epi_id", selectedEpi.value);
-      setValue("nome", selectedEpi.label);
+      setValue("nome_epi", selectedEpi.label);
+   
     }
   }, [selectedEpi, setValue]);
  
 
   const onSubmit = async (epiInfo) => {
     try {
-      const { data } = await toast.promise(
+     await toast.promise(
         api.post("/entrega", {
           funcionario_id: epiInfo.funcionario_id,
           epi_id: epiInfo.epi_id,
-          nome: epiInfo.nome,
+          nome_epi: epiInfo.nome_epi,
           quantidade: epiInfo.quantidade,
+       
         }),
+       
         {
           pending: "Entregando EPI...",
           success: "Epi Entregue",
           error: "Não foi possivel Entregar.",
         }
+         
       );
-    } catch (err) {
+      
+    }
+    
+    catch (err) {
       console.error("Erro no cadastro:", err);
     }
+   
   };
 
   return (
@@ -98,6 +107,9 @@ export default function DeliveryEPi() {
           />
           <p>{errors?.epi_id?.message}</p>
         </InputContainer> */}
+
+         <input type="hidden" {...register("epi_id")} />
+          <input type="hidden" {...register("nome_epi")} />
 
         <InputContainer>
           <Label>Descrição do EPI </Label>

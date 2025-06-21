@@ -12,6 +12,7 @@ import DeliveryEPi from "../containers/deliveryEPi/index.jsx";
 import GetHistory from "../containers/getHistory/index.jsx";
 import ListHistory from "../containers/listHistory/index.jsx";
 import AddStock from "../containers/addStock/index.jsx";
+import EditEpi from "../containers/editEpi/index.jsx";
 
 export const Routes = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ export const Routes = createBrowserRouter([
             path: paths.AddStock,
             element: <AddStock />,
           },
+          {
+            path: paths.EditEpi,
+            element: <EditEpi />,
+          },
 
           {
             index: true,
@@ -71,7 +76,7 @@ export const Routes = createBrowserRouter([
                   textAlign: "center",
                 }}
               >
-                Selecione alguma opção no menu ao lado.
+                SELECIONE ALGUMA OPÇÃO AO LADO.
               </p>
             ),
           },
